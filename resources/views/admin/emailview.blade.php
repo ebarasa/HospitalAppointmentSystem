@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
 
+    <base href="/public">
+
     <style type="text/css">
       label{
         display: inline-block;
@@ -33,37 +35,31 @@
           </div>
         @endif
 
-        <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{url('sendemail',$data->id)}}" method="POST">
           @csrf
           <div style="padding:15px;">
-            <label>Doctor Name</lable>
-            <input type="text" style="color:black" name="name" placeholder="Write the name" required="">
+            <label>Greeting</lable>
+            <input type="text" style="color:black" name="greeting" placeholder="Write Greetings" required="">
           </div>
 
           <div style="padding:15px;">
-            <label>Phone Number</lable>
-            <input type="number" style="color:black" name="number" placeholder="Write the number" required="">
+            <label>Body</lable>
+            <input type="text" style="color:black" name="body" placeholder="Write Message" required="">
           </div>
 
           <div style="padding:15px;">
-            <label>Specialization</lable>
-            <select name="speciality" style="color: black; width: 200px;" required="">
-              <option>---Select---</option>
-              <option value="dentist">Dentist</option>
-              <option value="eyear">Eye|Ear</option>
-              <option value="brain">Brain</option>
-              <option value="heart">Heart</option>
-              <option value="skin">Skin</option>
-            </select>
-          </div>
-          <div style="padding:15px;">
-            <label>Room Number</lable>
-            <input type="number" style="color:black" name="room" placeholder="Write room number" required="">
+            <label>Action Text</lable>
+            <input type="text" style="color:black" name="actiontext" placeholder="Write Action Text" required="">
           </div>
 
           <div style="padding:15px;">
-            <label>Doctor Image</lable>
-            <input type="file" name="file"  required="">
+            <label>Action Url</lable>
+            <input type="text" style="color:black" name="actionurl" placeholder="Write Action URL" required="">
+          </div>
+
+          <div style="padding:15px;">
+            <label>End Part</lable>
+            <input type="text" style="color:black" name="endpart" placeholder="Write End Part" required="">
           </div>
 
           <div style="padding:15px;">
